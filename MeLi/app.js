@@ -2,8 +2,8 @@ const express= require('express');
 const app = express();
 const path= require('path');
 //Middleware
-//const publicPath = path.resolve(__dirname, '../Public');
-app.use(express.static('Public'));
+const publicPath = path.resolve(__dirname, '../Public');
+app.use(express.static(publicPath));
 app.listen(process.env.PORT||3000,function(){console.log('listening on port 3000');});
 //rUTAS:
 app.get('/', function(req, res) {
